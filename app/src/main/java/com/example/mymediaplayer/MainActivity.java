@@ -39,10 +39,9 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnBuf
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode){
             case 1:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_DENIED){
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                     initMediaPlayer();
                 }else {
-
 
                     Log.e(TAG,"onRequestPermissionsResult 拒绝权限将无法使用程序");
                     Toast.makeText(this,"拒绝权限将无法使用程序",Toast.LENGTH_SHORT).show();
@@ -53,16 +52,17 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnBuf
     }
 
     private void checkPermission() {
-//        if (ContextCompat.checkSelfPermission(MainActivity.this,
-//                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_DENIED){
-//            ActivityCompat.requestPermissions(MainActivity.this,new String[]{
-//                    Manifest.permission.WRITE_EXTERNAL_STORAGE
-//            },1);
-//        }else{
-//            initMediaPlayer();
-//        }
+        if (ContextCompat.checkSelfPermission(MainActivity.this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
 
-        initMediaPlayer();
+            ActivityCompat.requestPermissions(MainActivity.this,
+                    new String[]{ Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+
+        }else{
+            initMediaPlayer();
+        }
+
+        //initMediaPlayer();
     }
 
     private void initMediaPlayer() {
