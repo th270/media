@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnBuf
 //            File file = new File("/data/music2.mp3");
 
             //   音乐全路径： /storage/emulated/0/Music/music.mp3
-            File file = new File(Environment.getExternalStorageDirectory(), "music/music.mp3");
+            File file = new File(Environment.getExternalStorageDirectory(), "music/music2.mp3");
             String canonicalPath = file.getCanonicalPath();
             String path = file.getPath();
             Log.e(TAG," canonicalPath == " + canonicalPath );
