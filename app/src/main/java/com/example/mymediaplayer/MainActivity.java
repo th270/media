@@ -71,24 +71,6 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnBuf
 
             Log.e(TAG,"initMediaPlayer !");
 
-//            File file = new File("/data/music2.mp3");
-
-            //   音乐全路径： /storage/emulated/0/Music/music.mp3
-//            File file = new File(Environment.getExternalStorageDirectory(), "music/music2.mp3");
-//            String canonicalPath = file.getCanonicalPath();
-//            String path = file.getPath();
-//            Log.e(TAG," canonicalPath == " + canonicalPath );
-//            Log.e(TAG," path == " + path );
-//
-//            boolean exists = file.exists();
-//            if (exists){
-//
-//                mediaPlayer.setDataSource(file.getPath());
-//                mediaPlayer.prepare();
-//            }else {
-//                Log.e(TAG,"initMediaPlayer error! no music2.mp3 file!");
-//            }
-
 
             //String url = "http://audio04.dmhmusic.com/71_53_T10038887855_128_4_1_0_sdk-cpm/cn/0209/M00/B5/88/ChR4611KQRGARQt4ADk5_kURqfg289.mp3";
             String url = "http://file.kuyinyun.com/group1/M00/90/B7/rBBGdFPXJNeAM-nhABeMElAM6bY151.mp3";
